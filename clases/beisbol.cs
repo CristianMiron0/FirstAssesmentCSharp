@@ -1,11 +1,11 @@
 public class Beisbol : Deportes
 {
-    public double entradaExtra;
+    public string entradaExtra;
 
-    public Beisbol(string nombre, int jugadores, double entradaExtra)
+    public Beisbol(string nombre, int jugadores, string entradaExtra)
         : base(nombre, jugadores)
     {
-        this.entradaExtra = entradaExtra;
+        this.entradaExtra = entradaExtra ?? throw new ArgumentNullException(nameof(entradaExtra));
     }
 
     public override string Descripcion()

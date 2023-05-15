@@ -39,12 +39,8 @@ class Program
 
                 case "béisbol":
                     Write("Ingrese la descripción de la entrada extra: ");
-                    double entradaExtra;
-                    while (!double.TryParse(ReadLine(), out entradaExtra))
-                    {
-                        WriteLine("Ingrese una descripción válida para la entrada extra.");
-                    }
-                    deporte = new Beisbol(nombre, jugadores, entradaExtra);
+                    string? entradaExtra = ReadLine()?.Trim();
+                    deporte = new Beisbol(nombre, jugadores, entradaExtra!);
                     break;
 
                 default:
